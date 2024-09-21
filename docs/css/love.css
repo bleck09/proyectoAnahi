@@ -1,13 +1,38 @@
 /* Estilos generales de la página */
-
 body {
     font-family: 'Dancing Script', cursive;
-    background-color: #1f1d1d;
+    background: linear-gradient(135deg, #000000, #1c1c1c, #0a0a0a); /* Degradado inicial en tonos oscuros */
+    background-size: 200% 200%; /* Para crear el efecto de movimiento */
+    animation: cambiarFondo 5s ease infinite; /* Duración de 10s y repetición infinita */
     text-align: center;
     padding: 20px;
     justify-content: center;
     align-items: center;
-    background-size: cover;
+    color: #fff; /* Asegura que el texto sea blanco para un buen contraste */
+}
+
+/* Animación para cambiar los colores del fondo */
+@keyframes cambiarFondo {
+    0% {
+        background-position: 0% 50%;
+        background-color: #000000; /* Negro puro inicial */
+    }
+    25% {
+        background-position: 50% 50%;
+        background-color: #1c1c1c; /* Un gris muy oscuro */
+    }
+    50% {
+        background-position: 100% 50%;
+        background-color: #2e2e2e; /* Un gris oscuro */
+    }
+    75% {
+        background-position: 50% 50%;
+        background-color: #0a0a0a; /* Gris negro profundo */
+    }
+    100% {
+        background-position: 0% 50%;
+        background-color: #000000; /* Regresa al negro puro */
+    }
 }
 .Titulo21{
     font-family: 'Dancing Script', cursive;
@@ -28,7 +53,7 @@ h2{
 p {
     font-family: 'Raleway', sans-serif;
     font-size: 1.2em;
-    color:   #d4b9a6;
+    color:   #ffffff;
 }
 
 nav ul {
@@ -423,3 +448,117 @@ button {
     fill: #fffdef;
   }
   
+/* Eliminar márgenes y padding global */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
+}
+
+/* Sección con imagen de fondo y parallax */
+.section1 {
+    background-image: url('../images/fondo.jpg'); /* Imagen de fondo */
+    background-size: cover; /* Cubre toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    background-attachment: fixed; /* Efecto parallax, la imagen se queda fija */
+    background-repeat: no-repeat; /* No repetir la imagen */
+    height: 100vh; /* Ocupa toda la pantalla en altura */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 20px;
+    position: relative;
+}
+
+/* Capa oscura encima de la imagen */
+.section1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Oscurece el fondo */
+    z-index: 1;
+}
+
+/* Asegura que el contenido esté por encima de la capa oscura */
+.section1 > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Efecto de transición suave para el contenido */
+.section1-content {
+    transition: transform 1s ease; /* Transición suave al hacer scroll */
+}
+
+.section1.scrolled .section1-content {
+    transform: translateY(-50px); /* Mueve el contenido hacia arriba al hacer scroll */
+}
+
+/* --- Ajustes para dispositivos móviles --- */
+@media (max-width: 768px) {
+    .section1 {
+        background-attachment: fixed; /* Mantén el efecto parallax en móviles */
+        height: 100vh; /* La altura sigue siendo del 100% de la pantalla */
+    }
+    
+    .section1 > * {
+        padding: 10px; /* Reduce los paddings en móviles */
+    }
+
+   
+    
+    .section1-content {
+        padding: 20px 10px;
+        transform: translateY(-20px); /* Ajuste menor para la transición */
+    }
+}
+
+/* Ajuste para pantallas más pequeñas como teléfonos */
+@media (max-width: 480px) {
+    .section1 {
+        height: auto; /* Ajusta la altura en pantallas muy pequeñas */
+    }
+    
+    .section1-content {
+        transform: translateY(0px); /* Elimina el movimiento en pantallas muy pequeñas */
+    }
+
+    
+}
+
+hr {
+    border: none; /* Elimina el borde predeterminado */
+    height: 5px; /* Define el grosor de la línea */
+    background-color: #fe9995; /* Cambia el color de la línea */
+    width: 80%; /* Ajusta el ancho de la línea al 80% */
+    margin: 40px auto; /* Centra la línea y añade un margen superior e inferior */
+    box-sizing: border-box; /* Asegura que el padding no cause desbordamientos */
+    border-radius: 5px; /* Redondea los bordes de la línea */
+    box-shadow: 0 4px 10px rgba(235, 231, 231, 0.7); /* Añade una sombra más prominente */
+}
+
+.img-responsive {
+    width: 200px; /* Tamaño inicial de la imagen */
+    transition: transform 0.5s ease-in-out; /* Transición suave para el efecto */
+    animation: pulsar 2s infinite; /* Animación de pulsación */
+}
+
+@keyframes pulsar {
+    0% {
+        transform: scale(1); /* Tamaño normal */
+    }
+    50% {
+        transform: scale(1.2); /* Aumenta un 20% */
+    }
+    100% {
+        transform: scale(1); /* Vuelve al tamaño normal */
+    }
+}

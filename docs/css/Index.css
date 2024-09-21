@@ -2,10 +2,92 @@
    body
 =================================== */
 body {
-    font-family: 'Raleway', sans-serif;
-    background-color: #1f1d1d;
-    text-align: center;
-    padding: 20px;
+  font-family: 'Raleway', sans-serif;
+  background: black; /* Imagen de fondo */
+  background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-attachment: fixed; /* Fija la imagen para crear un efecto parallax */
+  text-align: center;
+  padding: 20px;
+  margin: 0; /* Elimina los márgenes por defecto */
+  height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
+}
+/* Sección con imagen de fondo y parallax */
+.section1 {
+  background-image: url('../images/kuromi.jpg'); /* Imagen de fondo */
+  background-size: cover; /* Cubre toda la pantalla */
+  background-position: center; /* Centra la imagen */
+  background-attachment: fixed; /* Efecto parallax, la imagen se queda fija */
+  background-repeat: no-repeat; /* No repetir la imagen */
+  height: 100vh; /* Ocupa toda la pantalla en altura */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 20px;
+  position: relative;
+}
+
+/* Capa oscura encima de la imagen */
+.section1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8); /* Oscurece el fondo */
+  z-index: 1;
+}
+
+/* Asegura que el contenido esté por encima de la capa oscura */
+.section1 > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Efecto de transición suave para el contenido */
+.section1-content {
+  transition: transform 1s ease; /* Transición suave al hacer scroll */
+}
+
+.section1.scrolled .section1-content {
+  transform: translateY(-50px); /* Mueve el contenido hacia arriba al hacer scroll */
+}
+
+/* --- Ajustes para dispositivos móviles --- */
+@media (max-width: 768px) {
+  .section1 {
+      background-attachment: fixed; /* Mantén el efecto parallax en móviles */
+      height: 100vh; /* La altura sigue siendo del 100% de la pantalla */
+  }
+  
+  .section1 > * {
+      padding: 10px; /* Reduce los paddings en móviles */
+  }
+
+ 
+  
+  .section1-content {
+      padding: 20px 10px;
+      transform: translateY(-20px); /* Ajuste menor para la transición */
+  }
+}
+
+/* Ajuste para pantallas más pequeñas como teléfonos */
+@media (max-width: 480px) {
+  .section1 {
+      height: auto; /* Ajusta la altura en pantallas muy pequeñas */
+  }
+  
+  .section1-content {
+      transform: translateY(0px); /* Elimina el movimiento en pantallas muy pequeñas */
+  }
+
+  
 }
 p {
     font-size: 2.2em;
