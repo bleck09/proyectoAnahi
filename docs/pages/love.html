@@ -11,6 +11,33 @@
     
 </head>
 <body>
+  <!-- Elemento de audio oculto -->
+  <audio id="background-music" loop>
+    <source src="../music/Mi suerte.mpeg.mp3" type="audio/mpeg">
+    Tu navegador no soporta la reproducción de audio.
+</audio>
+
+<script>
+    // Función para reproducir o pausar la música dependiendo de la visibilidad de la página
+    function handleVisibilityChange() {
+        var audio = document.getElementById('background-music');
+        
+        if (document.hidden) {
+            audio.pause(); // Pausa la música si la página no está visible
+        } else {
+            audio.play(); // Reanuda la música si la página está visible
+        }
+    }
+
+    // Al cargar la página, reproduce la música
+    window.addEventListener('load', function() {
+        var audio = document.getElementById('background-music');
+        audio.play();
+    });
+
+    // Escucha el evento de cambio de visibilidad
+    document.addEventListener('visibilitychange', handleVisibilityChange, false);
+</script>
   <section class="section1">
     <div class="container text-center mt-5">
       <h1 class="Titulo21">Feliz 21 de septiembre, mi amor 💖</h1>
@@ -49,27 +76,20 @@
   </div>
   <div class="cardAnahi">
     <!-- Card para los ojos -->
-<div class="cardAn">
-  <h2 class="cardAnTitulo">Tus Ojos</h2>
-  <p class="cardAnDescrip">Tus ojos son como dos luceros que iluminan cada uno de mis días. Me pierdo en su profundidad y encuentro el amor en cada mirada. 💖</p>
-</div>
+    <div class="cardAn">
+      <h2 class="cardAnTitulo">Tus Ojos</h2>
+      <p class="cardAnDescrip">Tus ojos son tan encantadores. Cuando me miras de esa manera, te ves increíblemente preciosa. 💖</p>
+    </div>
 
 <!-- Card para el cabello -->
 <div class="cardAn">
   <h2 class="cardAnTitulo">Tu Cabello</h2>
-  <p class="cardAnDescrip">Cada mechón de tu cabello es una suave caricia para mis pensamientos. Su suavidad y brillo son tan deslumbrantes como tu sonrisa. ✨</p>
+  <p class="cardAnDescrip">Ese pelo lacio te hace ver como una diosa, y el brillo que tiene me encanta. ✨</p>
 </div>
 
-<!-- Card para la sonrisa -->
 <div class="cardAn">
   <h2 class="cardAnTitulo">Tu Sonrisa</h2>
-  <p class="cardAnDescrip">Tu sonrisa es la razón por la que cada día es especial. Es la chispa que ilumina mi vida y llena mi corazón de alegría. 😊</p>
-</div>
-
-<!-- Card para la voz -->
-<div class="cardAn">
-  <h2 class="cardAnTitulo">Tu Voz</h2>
-  <p class="cardAnDescrip">Tu voz es la melodía que quiero escuchar por el resto de mi vida. Cada palabra tuya es una canción que me llena de paz. 🎶</p>
+  <p class="cardAnDescrip">Tu sonrisa me desarma, es tan hermosa que ilumina todo a su alrededor. No hay nada que me guste más que verte sonreír. 😊</p>
 </div>
 
 <!-- Card para las manos -->
@@ -77,10 +97,9 @@
   <h2 class="cardAnTitulo">Tus Manos</h2>
   <p class="cardAnDescrip">Tus manos, tan suaves y delicadas, me dan la certeza de que siempre estarás a mi lado, cuidándome con amor. 🤲</p>
 </div>
-
 <!-- Card para el tiempo juntos -->
 <div class="cardAn">
-  <h2 class="cardAnTitulo">Nuestro Tiempo Juntos</h2>
+  <h2 class="cardAnTitulo">Tiempo Juntos</h2>
   <p class="cardAnDescrip">Cada segundo contigo es un regalo, haces que cada momento sea especial. ⏳💑</p>
 </div>
 
@@ -95,7 +114,8 @@
   <h2 class="cardAnTitulo">Tu Dedicación</h2>
   <p class="cardAnDescrip">Gracias por estar siempre a mi lado, tu amor me llena de felicidad. 🙏💖</p>
 </div>
-  
+
+
   </div>
   
   </section>
