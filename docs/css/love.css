@@ -2,36 +2,36 @@
 body {
     font-family: 'Dancing Script', cursive;
     background: linear-gradient(135deg, #000000, #1c1c1c, #0a0a0a); /* Degradado inicial en tonos oscuros */
-    background-size: 200% 200%; /* Para crear el efecto de movimiento */
-    animation: cambiarFondo 5s ease infinite; /* Duración de 10s y repetición infinita */
+    background-size: 200% 200%; 
+    animation: cambiarFondo 5s ease infinite;
     text-align: center;
     padding: 20px;
     justify-content: center;
     align-items: center;
-    color: #fff; /* Asegura que el texto sea blanco para un buen contraste */
+    color: #fff; 
 }
 
 /* Animación para cambiar los colores del fondo */
 @keyframes cambiarFondo {
     0% {
         background-position: 0% 50%;
-        background-color: #000000; /* Negro puro inicial */
+        background-color: #000000; 
     }
     25% {
         background-position: 50% 50%;
-        background-color: #1c1c1c; /* Un gris muy oscuro */
+        background-color: #1c1c1c; 
     }
     50% {
         background-position: 100% 50%;
-        background-color: #2e2e2e; /* Un gris oscuro */
+        background-color: #2e2e2e; 
     }
     75% {
         background-position: 50% 50%;
-        background-color: #0a0a0a; /* Gris negro profundo */
+        background-color: #0a0a0a; 
     }
     100% {
         background-position: 0% 50%;
-        background-color: #000000; /* Regresa al negro puro */
+        background-color: #000000; 
     }
 }
 .Titulo21{
@@ -159,9 +159,9 @@ footer {
 
 .gallery3d {
     display: flex;
-    justify-content: center;  /* Centra horizontalmente */
-    align-items: center;      /* Centra verticalmente */
-    min-height: 100vh;        /* Altura mínima para ocupar toda la pantalla */   
+    justify-content: center;  
+    align-items: center;      
+    min-height: 100vh;       
 }
 .gallery_corazon{
     font-size: 30vh;
@@ -212,14 +212,14 @@ footer {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    box-shadow: 0px 50px 50px rgba(0, 0, 0, 0.5); /* Sombra alrededor de las imágenes */
-    border-radius: 10px; /* Opcional: para redondear las esquinas de las imágenes */
+    box-shadow: 0px 50px 50px rgba(0, 0, 0, 0.5); 
+    border-radius: 10px; 
 }
 
 .img-responsive {
-    max-width: 100%;  /* La imagen nunca será más ancha que su contenedor */
-    height: auto;     /* Mantiene la proporción de la imagen */
-    margin-top: 20px; /* Separación opcional */
+    max-width: 100%; 
+    height: auto;     
+    margin-top: 20px; 
 }
 
 
