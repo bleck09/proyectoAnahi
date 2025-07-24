@@ -506,11 +506,12 @@ html, body {
 @media (max-width: 768px) {
     .section1 {
         background-attachment: fixed; /* Mantén el efecto parallax en móviles */
-        height: 100vh; /* La altura sigue siendo del 100% de la pantalla */
+        height: auto; /* La altura sigue siendo del 100% de la pantalla */
     }
     
     .section1 > * {
         padding: 10px; /* Reduce los paddings en móviles */
+        height: auto;
     }
 
    
