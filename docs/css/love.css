@@ -442,7 +442,7 @@ html, body {
     background-position: center; /* Centra la imagen */
     background-attachment: fixed; /* Efecto parallax, la imagen se queda fija */
     background-repeat: no-repeat; /* No repetir la imagen */
-    height: 100vh; /* Ocupa toda la pantalla en altura */
+    height: auto; /* Ocupa toda la pantalla en altura */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -461,7 +461,7 @@ html, body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.6); /* Oscurece el fondo */
+    background-color: rgba(0, 0, 0, 0.7); /* Oscurece el fondo */
     z-index: 1;
 }
 
