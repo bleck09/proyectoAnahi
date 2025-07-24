@@ -1,9 +1,9 @@
 /* Estilos generales de la página */
 body {
     font-family: 'Dancing Script', cursive;
-    background: linear-gradient(135deg, #000000, #1c1c1c, #0a0a0a); /* Degradado inicial en tonos oscuros */
+    background: rgb(5, 5, 5); /* Degradado inicial en tonos oscuros */
     background-size: 200% 200%; 
-    animation: cambiarFondo 5s ease infinite;
+    
     text-align: center;
     padding: 20px;
     justify-content: center;
@@ -11,29 +11,7 @@ body {
     color: #fff; 
 }
 
-/* Animación para cambiar los colores del fondo */
-@keyframes cambiarFondo {
-    0% {
-        background-position: 0% 50%;
-        background-color: #000000; 
-    }
-    25% {
-        background-position: 50% 50%;
-        background-color: #1c1c1c; 
-    }
-    50% {
-        background-position: 100% 50%;
-        background-color: #2e2e2e; 
-    }
-    75% {
-        background-position: 50% 50%;
-        background-color: #0a0a0a; 
-    }
-    100% {
-        background-position: 0% 50%;
-        background-color: #000000; 
-    }
-}
+
 .Titulo21{
     font-family: 'Dancing Script', cursive;
     color: #fe9995;
